@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.window {
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.images {
+    position: relative;
+}
+
+.images>img {
+    width: 100%;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+}
+
+.images>img.current {
+    left: 0;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.images>img.leave {
+    transform: translateX(-100%);
+    z-index: 1;
+}
+
+.images>img.enter {
+    transform: translateX(100%);
+}
+
+.btn.buttonL {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border: 20px solid black;
+    z-index: 2;
+    opacity: 0.2;
+    border-radius: 50%;
+}
+
+.btn.buttonL::after {
+    content: "";
+    display: inline-block;
+    border: 12px solid transparent;
+    height: 0px;
+    width: 0px;
+    border-right-color: red;
+    border-left-width: 0;
+    position: absolute;
+    left: -8px;
+    top: -12px;
+}
+
+.btn.buttonR {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    border: 20px solid black;
+    z-index: 2;
+    opacity: 0.2;
+    border-radius: 50%;
+}
+.btn.buttonR::after {
+    content: "";
+    display: inline-block;
+    border: 12px solid transparent;
+    height: 0px;
+    width: 0px;
+    border-left-color: red;
+    border-right-width: 0;
+    position: absolute;
+    right:-8px;
+    top: -12px;
+}
+.btn {
+    display: none;
+}
